@@ -4,6 +4,12 @@ pipeline {
         CI = 'true'
     }
     stages {
+
+        stage('Build') {
+            steps {
+                sh './jenkins/scripts/kill.sh'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'npm install'
@@ -16,7 +22,6 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'npm stop'
                 sh './jenkins/scripts/deliver.sh'
             }
         }
