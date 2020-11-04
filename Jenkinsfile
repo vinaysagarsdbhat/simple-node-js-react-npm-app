@@ -5,7 +5,7 @@ pipeline {
     }
     stages {
 
-        stage('Build') {
+        stage('Kill') {
             steps {
                 sh './jenkins/scripts/kill.sh'
             }
