@@ -16,7 +16,6 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'sudo npm install -g serve'
                 sh './jenkins/scripts/deliver.sh'
             }
         }
